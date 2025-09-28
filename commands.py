@@ -2,9 +2,9 @@ import discord
 from discord import app_commands
 from guild_config import load_config, save_config, set_log_channel, set_mod_role, get_guild_config
 
-class BotCommands(app_commands.Group):
+class BlacklistCommands(app_commands.Group):
     def __init__(self, tree: app_commands.CommandTree, default_mod_role_id: int):
-        super().__init__()
+        super().__init__(name="blacklist", description="Blacklist management commands")
         self.tree = tree
         self.default_mod_role_id = default_mod_role_id
 
@@ -43,6 +43,4 @@ class BotCommands(app_commands.Group):
         await interaction.response.send_message(embed=embed, ephemeral=True)
 
 async def setup_commands(tree: app_commands.CommandTree, default_mod_role_id: int):
-    tree.add_command(BotCommands(tree, default_mod_role_id))
-
-
+    tree.add_command(BlacklistCommands(tree, default_mod_role_id))
