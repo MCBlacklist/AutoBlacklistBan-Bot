@@ -1,7 +1,11 @@
 import json
 from pathlib import Path
+from typing import Dict, Any, List
 
 CONFIG_FILE = Path("data/guild_config.json")
+
+# Type alias for guild configuration
+ConfigDict = Dict[str, Any]
 
 def load_config():
     if CONFIG_FILE.exists():

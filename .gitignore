@@ -24,6 +24,3 @@ ENV/
 .Trashes
 ehthumbs.db
 Thumbs.db
-
-# reqs - tmp
-requirements.txt
